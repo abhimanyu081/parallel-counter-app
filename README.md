@@ -30,7 +30,7 @@ Use Redis server and use its atomic increment feature to updated the count consi
 Faster Simultaneous reads/writes.
 
 
-## Approach 2 for very high concurent increments requests
+## Suggested Approach 2 (for very high concurent increments requests)
 [VM1,VM2,VM3..VMn] --------each increment event----->  KAFKA --------->  Flink{accumulate count}-----------------> Sink [Redis/Mysql/Cassandra]  
   
 
