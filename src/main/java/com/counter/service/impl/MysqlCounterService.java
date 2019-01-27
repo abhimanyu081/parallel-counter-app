@@ -36,7 +36,7 @@ public class MysqlCounterService implements CounterService {
 		long countToBeDumped=count.getAndSet(0l);
 		boolean updated=true;
 		try {
-			jdbcTemplate.update("UPDATE number SET count = count + ?", new Object[] { countToBeDumped });
+			jdbcTemplate.update("UPDATE number SET count = count + ? where id=1", new Object[] { countToBeDumped });
 			logger.info("Count Updated To Databse = {}",countToBeDumped);
 		} catch (DataAccessException e) {
 			updated=false;
