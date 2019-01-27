@@ -7,11 +7,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.counter.service.CounterService;
 
-@Repository
+@Service
 public class MysqlCounterService implements CounterService {
 
 	private static final AtomicLong count = new AtomicLong(0);
@@ -21,6 +21,12 @@ public class MysqlCounterService implements CounterService {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
+	/**
+	 * 
+	 * incremnets the number and returns incremneted number
+	 * 
+	 */
+	
 	@Override
 	public long incrementAndGet() {
 
@@ -29,6 +35,7 @@ public class MysqlCounterService implements CounterService {
 	}
 
 	/**
+	 * Updates the counter to table and reset it.
 	 * 
 	 */
 	@Override

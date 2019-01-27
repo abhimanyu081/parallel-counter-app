@@ -12,6 +12,11 @@ public class CountDBUpdateCron {
 	@Autowired
 	CounterService counterService;
 	
+	/**
+	 * 
+	 * Dumps count  to table every 10 seconds
+	 */
+	
 	@Scheduled(cron = "0/10 * * * * *")
 	public void updateCounToDb() {
 		counterService.dumpAndReset();

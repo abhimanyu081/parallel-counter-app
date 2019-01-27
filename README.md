@@ -40,14 +40,18 @@ Faster Simultaneous reads/writes.
 3. Mysql 
 
 ## Instructions to run the app.
-Note :- App creates a new table named Number on each startup (drops older one if exists).
+
 1. clone the app from github.
 2. Go to extracted app directory.
 3. Provide mysql connection url, user password properties in `/src/main/resources/application.properties`
 4. Build application using command `mvn clean install`.
-5. Run App using 
+5. Run App using command `mvn spring-boot run` 
 6. go to apache jmeter bin folder and run below command to run the test
-7. To modify the jmx file open it in jmeter GUI.
+7. To modify the jmx file open it in jmeter GUI and change.
+8. Run jmeter test using command line e.g [ D:\work\personal\parallel-counter-app\parallel-counter-app\CounterApi.jmx  -l ApiTestReport1.jtl]
 6. Stop app using ctrl+c
+7. Run another cycle if needed.
 
-Note:- make sure app is shut down properly before another run.
+Note 1:- App creates a new table named Number on each startup (drops older one if exists).
+Note 2:- make sure app is shut down properly before another run.
+Note 3:- I ran the test using 10000 users with ramp up period of 10 seconds, the count in table was 10000 (subject to jmeter finished with 0% error).

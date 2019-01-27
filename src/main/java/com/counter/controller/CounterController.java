@@ -1,7 +1,5 @@
 package com.counter.controller;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,12 +12,15 @@ public class CounterController {
 	@Autowired
 	CounterService counterService;
 	
+	/**
+	 * Rest API to increment  
+	 * 
+	 * @return
+	 */
 	@RequestMapping("/increment")
 	public Long increment() {
 		long count= counterService.incrementAndGet();
-		if(count==5000) {
-			System.out.println(new Date());
-		}
+
 		return count;
 		
 	}
