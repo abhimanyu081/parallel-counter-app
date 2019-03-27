@@ -1,7 +1,7 @@
 # Integer Incrementer
 parallel-counter-app increments an Integer column in mysql table Number atomically.
 
-## Used Approach 
+## Used Approach  
 
 Assumption:-Count Reads are not as frequents as writes.
 
