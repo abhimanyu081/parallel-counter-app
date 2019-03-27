@@ -1,4 +1,4 @@
-use test;
+use counter_app;
 DROP TABLE IF EXISTS number;
 CREATE TABLE Number ( id INT NOT NULL PRIMARY KEY,
 count integer not null default 0);
